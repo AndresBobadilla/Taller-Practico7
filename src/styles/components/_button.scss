@@ -1,0 +1,18 @@
+@use"../variables" as v ;
+
+@mixin button(){
+
+        button{
+            font-family: v.$font-family;
+            font-weight: 500;
+            font-size: 0.7rem;
+            background-color: #cac4c477;
+            cursor: pointer;
+            padding: 0.27rem;
+            margin-top: 0.2rem;
+            color: v.$color-texto; 
+            text-transform: uppercase; 
+            border: none;
+            border-radius: 7px;
+        }     
+}

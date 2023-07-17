@@ -1,0 +1,21 @@
+@use"../variables" as v ;
+
+@mixin input(){
+
+    input[type="text"],
+    input[type="email"],
+    input[type="radio"],
+    select{
+        border: 0;
+        border-bottom: 1px solid #bf00ff;
+        outline: none;
+        font-family: v.$font-family;
+        font-weight: 400;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.1rem;    
+        color: v.$color-texto;            
+    }
+    input[type="radio"]{        
+        margin: 0 0.5rem;
+    }
+}
