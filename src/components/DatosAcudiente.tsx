@@ -5,41 +5,23 @@ import { datosAcudienteSchema} from "../schemas/datosAcudienteSchema";
 
 
 
-
-type DataAcudiente={
-    fullNameAcudiente: string;
-    identificacionAcudiente: string;
-    parentesco: string;
-    emailAcudiente: string;    
-    telefonoAcudiente: string;    
-};
-
-
-
-
 const DatosAcudiente =()=>{
     const {setStep, data, setData}= useContext(Context);
     let botonatras:string;
 
-    const onSubmit = (values:DataAcudiente) => {
-        let newdata={values};
+    const onSubmit = (values:any) => {        
         {botonatras==="atras"? setStep("datospersonales"):setStep("datosemergencia")};
-        setData({...newdata, newdata});        
-        console.log("Form submitted!");
-        
+        setData({...values,values}); 
     };
 
-    const onchange =()=>{
-        console.log("suvmit");
-        
-    };
+   
     return(
         <main>          
             <section className="card">
                 <h3>Datos Acudiente</h3>
                 <Formik initialValues={data}
-                  validationSchema={datosAcudienteSchema} onSubmit={onSubmit} onChange={onchange} >
-                  <Form autoComplete="off" onChange={onchange}>
+                  validationSchema={datosAcudienteSchema} onSubmit={onSubmit}  >
+                  <Form autoComplete="off" >
                      <fieldset>
                          <label htmlFor="fullNameAcudiente">Nombre Completo </label>
                          <Field  type="text" name="fullNameAcudiente" id="fullNameAcudiente" autoFocus 

@@ -7,6 +7,7 @@ interface propContext{
     data: FormData;
     // setData: Function;
     setData: (Fuction:any)=>void;
+    // setData: (newdata:{})=>void;
 }
 
 type FormData={

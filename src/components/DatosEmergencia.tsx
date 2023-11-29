@@ -4,28 +4,14 @@ import { datosEmergenciaSchema} from "../schemas/datosEmergenciaSchema";
 import Context from "../contexts/Context";
 
 
-type DataEmergency={
-    contactName: string;
-    emailEmergency: string;    
-    telefonoEmergencia: string;
-    telefonoOpcional: string;
-       
-};
-
-
-
-
-
 const DatosEmergencia =() =>{
 
     const {setStep, data, setData}= useContext(Context);
     let botonatras:string;
 
-    const onSubmit = (values: DataEmergency) => {
+    const onSubmit = (values: any) => {
         {botonatras==="atras"? setStep("datosacudiente"):setStep("informaciondeportiva")};
-        let newdata={values};
-        setData({...newdata, newdata});
-        console.log("Form submitted!");
+        setData({...values,values});         
     };
 
     return (

@@ -4,29 +4,16 @@ import { infomacionDeportivaSchema} from "../schemas/informacionDeportivaSchema"
 import Context from "../contexts/Context";
 
 
-type DataDeportiva={
-    posicionJuego: string;
-    perfilDominante: string;    
-    club: string;
-    telefonoClub: string;
-       
-};
-
-
-
 
 const InformacionDeportiva =() =>{
 
     const {setStep, data, setData}= useContext(Context);
     
     let botonatras:string;
-
     
-    const onSubmit = (values:DataDeportiva) => {
-        let newdata={values};
+    const onSubmit = (values:any) => {
         {botonatras==="atras"? setStep("datosemergencia"):setStep("informacionmedica")};
-        setData({...newdata, newdata});
-        console.log("Form submitted!");
+        setData({...values,values});         
     };
     
     return (

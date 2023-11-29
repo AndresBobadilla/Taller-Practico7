@@ -4,56 +4,22 @@ import { datosPersonalesSchema} from "../schemas/datosPersonalesSchema";
 import Context from "../contexts/Context";
 
 
-type DataUser={
-    fullName: string;
-    identification: string;
-    sexo: string;
-    edad: string;
-    peso: string;
-    telefono: string;    
-};
-
-
-
-
-// const onSubmit = (values: DataUser) => {
-    
-//     setTimeout(() => {
-//         console.log(values);
-        
-//       alert(JSON.stringify(values, null, 2));
-//     }, 500);
-//   };
-
-
 const DatosPesonales =() =>{
 
     const {setStep, data, setData}= useContext(Context);
 
-    let newdata={...data };
-
-    const onSubmit = (values: DataUser) =>{
-        
-        let newdatas={values };
+    const onSubmit = (values: any) =>{
         setStep("datosacudiente");
-        setData({...newdata,newdatas});
-            
-        console.log('submitting');
+        setData(values);        
     };
-
-    const onchange= ()=>{
-        
-        console.log("");
-        
-    }
-   
+  
     return (
         <main>          
             <section className="card">
                 <h3>Datos Personales</h3>
                 <Formik initialValues={data}
-                  validationSchema={datosPersonalesSchema} onSubmit={onSubmit} onChange={onchange} >
-                  <Form onChange={onchange} autoComplete="off" >
+                  validationSchema={datosPersonalesSchema} onSubmit={onSubmit}  >
+                  <Form  autoComplete="off" >
                      <fieldset>
                          <label htmlFor="fullName">Nombre Completo </label>
                          <Field  type="text" name="fullName" id="fullName" autoFocus 

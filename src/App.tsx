@@ -5,17 +5,9 @@ import Context from "./contexts/Context";
 import DatosEmergencia from "./components/DatosEmergencia";
 import InformacionDeportiva from "./components/InformacionDepotiva";
 import InformacionMedica from "./components/InformacionMedica";
+import Resumen from "./components/Resumen";
+import Mensaje from "./components/Mensaje";
 
-
-
-// type FormData = {
-//   fullName: string;
-//   identification: string;
-//   sexo: any;
-//   edad: string;
-//   peso: string;
-//   telefono: string;
-// };
 
 const initialValues = {
   fullName: "",
@@ -60,6 +52,8 @@ function App() {
           {step === "datosemergencia" && <DatosEmergencia />}
           {step === "informaciondeportiva" && <InformacionDeportiva />}
           {step === "informacionmedica" && <InformacionMedica />}
+          {step === "resumen" && <Resumen />}
+          {step === "mensaje" && <Mensaje />}
         </div>
       </Context.Provider>
     </>

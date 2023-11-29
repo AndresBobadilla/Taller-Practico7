@@ -7,7 +7,7 @@ export const informacionMedicaSchema = Yup.object().shape({
     .matches(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/, "EPS can only contain letters and spaces")
     .required("EPS is required"),
     grupoSanguineo: Yup.string()
-    .matches(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/, "RH can only contain letters and spaces")
+    .oneOf(["O-", "O+", "A-","A+","B-","B+","AB-","AB+"], "Must select a valid kinship")
     .required("RH is required"),
     alergia: Yup.string()
     .matches(/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/, "Allergy can only contain letters and spaces")

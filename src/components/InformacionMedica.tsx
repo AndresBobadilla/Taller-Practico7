@@ -4,45 +4,16 @@ import { informacionMedicaSchema} from "../schemas/informacionMedicaSchema";
 import Context from "../contexts/Context";
 
 
-type DataMedica={
-    eps: string;
-    grupoSanguineo: string;       
-    alergia: string;
-    cirugias: string;    
-    enfermedades: string; 
-      
-};
-
-
-
-
-// const onSubmit = (values: DataUser) => {
-    
-//     setTimeout(() => {
-//         console.log(values);
-        
-//       alert(JSON.stringify(values, null, 2));
-//     }, 500);
-//   };
-
-    
-
-
-
 const InformacionMedica =() =>{
 
     const {setStep, data, setData}= useContext(Context);
     
     let botonatras:string;
 
-
-    const onSubmit = (values:DataMedica) =>{
-        let newdata={values};
-        {botonatras==="atras"? setStep("informaciondeportiva"):""};
-        setData({...newdata, newdata});
-        console.log(values);
-        console.log(data);
-
+    const onSubmit = (values:any) =>{        
+        {botonatras==="atras"? setStep("informaciondeportiva"):setStep("resumen")};
+        setData({...values,values});
+        
     };
     
     return (
@@ -66,8 +37,17 @@ const InformacionMedica =() =>{
                         </fieldset>
                      <fieldset>
                          <label htmlFor="grupoSanguineo">Grupo Sanguíneo RH </label>
-                         <Field  type="text" name="grupoSanguineo" id="grupoSanguineo"
-                        >                                
+                         <Field name="grupoSanguineo" id="grupoSanguineo" as="select"> 
+                            <option value="">Seleccione grupo sanguineo</option>
+                            <option value="O-">0-</option>
+                            <option value="O+">0+</option>
+                            <option value="A-">A-</option>
+                            <option value="A+">A+</option>
+                            <option value="B-">B-</option>
+                            <option value="B+">B+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="AB+">AB+</option>
+
                          </Field>
                          <ErrorMessage
                             name="grupoSanguineo"

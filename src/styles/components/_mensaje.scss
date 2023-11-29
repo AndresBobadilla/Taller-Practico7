@@ -1,0 +1,25 @@
+@use"../variables" as v;
+.mensaje{
+        
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &_card{
+            background-color: v.$bg-card;            
+            max-width: 520px;
+             width: 45%;
+             margin: 10px;
+            opacity: 0.6;
+            padding: 0.8rem;
+            border-radius: 10px;
+         h2{
+            font-weight: 700;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.3rem;
+            color: v.$color-title;
+            font-family: v.$font-family;        
+            }
+        }
+}
